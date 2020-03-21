@@ -177,7 +177,7 @@ User untuk apache adalah www-data, jadi untuk owner pada semua folder, sub folde
 ```
 	sudo chown -R www-data:www-data /var/www/html/
 ```
-> Jika anda akan mengcopy kan file kembali dari WinSCP pada folder `/var/www/html/` maka owner harus dikembalikan ke pi :
+> Jika anda akan mengcopy kan file kembali dari WinSCP pada folder `/var/www/html/` maka owner harus dikembalikan ke pi :  
 	```
 		sudo chown -R pi:pi /var/www/html/
 	```
