@@ -498,7 +498,7 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 	```
 	DAEMON_CONF="/etc/hostapd/hostapd.conf"
 	```
-- Start hostapd
+- Enable hostapd
 	```
 	sudo systemctl unmask hostapd
 	sudo systemctl enable hostapd
