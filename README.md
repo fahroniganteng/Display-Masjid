@@ -245,9 +245,9 @@ chromium-browser --incognito --kiosk http://localhost/display/
 ### INSTALL RTC
 - Pastikan **RTC modul** sudah terpasang pada GPIO raspberry di pin 1,3,5,7 (anda bisa cari di internet untuk lebih jelasnya)
 - Install i2c-tools, ketik perintah berikut pada terminal:
-```
-sudo apt install i2c-tools
-```
+	```
+	sudo apt install i2c-tools
+	```
 
 - Ganti lokasi indonesia.  
 	> jika sudah setting pada wizard saat pertama kali menjalankan os raspberry pi, proses ini bisa dilewati.  
@@ -265,94 +265,94 @@ sudo apt install i2c-tools
 
 - Aktifkan  i2c
 	- Ketik perintah berikut pada terminal:
-	```
-	sudo raspi-config
-	```
+		```
+		sudo raspi-config
+		```
 	- Pilih di menu :
 		- 5 Interfacing Options 
 		- P5 I2C 
 		- Pada menu `Would you like the ARM I2C interface to be enabled?`, pilih yes
 	
 - Detect modul RTC
-```
-sudo i2cdetect -y 1
-```
-jika sudah dipasang dengan benar biasanya akan muncul pada channel 68
-```
- 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
-10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
-60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- -- 
-70: -- -- -- -- -- -- -- --        
-```
+	```
+	sudo i2cdetect -y 1
+	```
+	jika sudah dipasang dengan benar biasanya akan muncul pada channel 68
+	```
+	 0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
+	00:          -- -- -- -- -- -- -- -- -- -- -- -- -- 
+	10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+	20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+	30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+	40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+	50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- 
+	60: -- -- -- -- -- -- -- -- 68 -- -- -- -- -- -- -- 
+	70: -- -- -- -- -- -- -- --        
+	```
 
 - Tambahkan konfigurasi RTC pada boot config.  
-Ketik perintah berikut pada terminal:
-```
-sudo nano /boot/config.txt
-```
-Tambahkan pada baris terakhir
-```
-dtoverlay=i2c-rtc,ds3231
-```
+	Ketik perintah berikut pada terminal:
+	```
+	sudo nano /boot/config.txt
+	```
+	Tambahkan pada baris terakhir
+	```
+	dtoverlay=i2c-rtc,ds3231
+	```
 
 - Tambahkan module RTC.  
-Ketik perintah berikut pada terminal:
-```
-sudo nano /etc/modules
-```
-Tambahkan pada baris terakhir
-```
-rtc-ds3231
-```
+	Ketik perintah berikut pada terminal:
+	```
+	sudo nano /etc/modules
+	```
+	Tambahkan pada baris terakhir
+	```
+	rtc-ds3231
+	```
 
 - Edit File /lib/udev/hwclock-set.  
-Ketik perintah berikut pada terminal:
-```
-sudo nano /lib/udev/hwclock-set
-```
-Berikan Comment pada baris berikut :
-```
-#if [ -e /run/systemd/system ] ; then
-# exit 0
-#fi
+	Ketik perintah berikut pada terminal:
+	```
+	sudo nano /lib/udev/hwclock-set
+	```
+	Berikan Comment pada baris berikut :
+	```
+	#if [ -e /run/systemd/system ] ; then
+	# exit 0
+	#fi
 ```
 
 - Lakukan restart raspberry
-```
-sudo reboot
-```
+	```
+	sudo reboot
+	```
 
 
 - Beberapa perintah untuk modul RTC.  
 	- Membaca waktu dari Raspberry
-	```
-	date
-	```
+		```
+		date
+		```
 	- Mengganti Waktu pada Raspberry
-	```
-	sudo date -s “DD MMM YYYY HH:MM:SS”
-	```
+		```
+		sudo date -s “DD MMM YYYY HH:MM:SS”
+		```
 	- Mengganti waktu pada RTC
-	```
-	sudo hwclock --set --date="YYYY-MM-DD HH:MM:SS" --localtime
-	```
+		```
+		sudo hwclock --set --date="YYYY-MM-DD HH:MM:SS" --localtime
+		```
 	- Membaca Waktu dari Module RTC
-	```
-	sudo hwclock -r 
-	```
+		```
+		sudo hwclock -r 
+		```
 	- Menulis waktu ke Module RTC Dari Raspberry.
-	```
-	sudo hwclock -w
-	```
+		```
+		sudo hwclock -w
+		```
 	- Menulis waktu Ke Raspberry Dari Module RTC
-	```
-	sudo hwclock -s
-	```
+		```
+		sudo hwclock -s
+		```
 
 - Lain-lain.  
 Script PHP update jam pada proses.php adalah:
