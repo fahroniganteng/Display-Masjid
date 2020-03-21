@@ -249,7 +249,7 @@ chromium-browser --incognito --kiosk http://localhost/display/
 sudo apt install i2c-tools
 ```
 - Ganti lokasi indonesia.  
-> jika sudah setting pada wizard saat pertama kali menjalankan os raspberry pi, proses ini bisa dilewati. 
+> jika sudah setting pada wizard saat pertama kali menjalankan os raspberry pi, proses ini bisa dilewati.  
 
 
 	- Ketik perintah berikut pada terminal:
