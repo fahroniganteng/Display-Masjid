@@ -112,23 +112,28 @@ Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
 
 - Jika HDMI tidak muncul di display/monitor (biasanya terjadi pada raspi 2 yang ada 2 slot HDMI)
 buka micro sd di PC dengan card reader, edit config.txt hapus komen baris berikut
-		# uncomment if hdmi display is not detected and composite is being output
-		hdmi_force_hotplug=1
-
+```
+	# uncomment if hdmi display is not detected and composite is being output
+	hdmi_force_hotplug=1
+```
 - Untuk setting display monitor jika tidak pas, lebih besar dari monitor (over scan)
 bisa disetting juga dari config.txt
-		# uncomment the following to adjust overscan. Use positive numbers if console
-		# goes off screen, and negative if there is too much
-		border
-		overscan_left=16
-		overscan_right=16
-		overscan_top=16
-		overscan_bottom=16
+```
+	# uncomment the following to adjust overscan. Use positive numbers if console
+	# goes off screen, and negative if there is too much
+	border
+	overscan_left=16
+	overscan_right=16
+	overscan_top=16
+	overscan_bottom=16
+```
 - Jika layar lebih kecil dari monitor (ada border hitam sekeliling monitor) bisa diisi minus
-		overscan_left=-10
-		overscan_right=-10
-		overscan_top=-10
-		overscan_bottom=-10
+```
+	overscan_left=-10
+	overscan_right=-10
+	overscan_top=-10
+	overscan_bottom=-10
+```
 dst....
 
 
@@ -145,11 +150,11 @@ Untuk mempermudah, anda bisa melakukan instalasi melalui remote SSH dan VNC
 ### UPDATE OS
 - Perintah update.
 ```
-sudo apt-get update
+	sudo apt-get update
 ```
 - Perintan upgrade
 ```
-sudo apt-get upgrade
+	sudo apt-get upgrade
 ```
 
 ----
@@ -157,8 +162,8 @@ sudo apt-get upgrade
 ### INSTALL APACHE DAN PHP SERVER SERTA INSTALASI WEB
 1. Instal apache dan PHP.
 ```  
-sudo apt install apache2
-sudo apt install php php-mbstring
+	sudo apt install apache2
+	sudo apt install php php-mbstring
 ```
 
 2. Ganti owner folder html.  
