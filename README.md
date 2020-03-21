@@ -113,26 +113,26 @@ Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
 - Jika HDMI tidak muncul di display/monitor (biasanya terjadi pada raspi 2 yang ada 2 slot HDMI)
 buka micro sd di PC dengan card reader, edit config.txt hapus komen baris berikut
 ```
-	# uncomment if hdmi display is not detected and composite is being output
-	hdmi_force_hotplug=1
+# uncomment if hdmi display is not detected and composite is being output
+hdmi_force_hotplug=1
 ```
 - Untuk setting display monitor jika tidak pas, lebih besar dari monitor (over scan)
 bisa disetting juga dari config.txt
 ```
-	# uncomment the following to adjust overscan. Use positive numbers if console
-	# goes off screen, and negative if there is too much
-	border
-	overscan_left=16
-	overscan_right=16
-	overscan_top=16
-	overscan_bottom=16
+# uncomment the following to adjust overscan. Use positive numbers if console
+# goes off screen, and negative if there is too much
+border
+overscan_left=16
+overscan_right=16
+overscan_top=16
+overscan_bottom=16
 ```
 - Jika layar lebih kecil dari monitor (ada border hitam sekeliling monitor) bisa diisi minus
 ```
-	overscan_left=-10
-	overscan_right=-10
-	overscan_top=-10
-	overscan_bottom=-10
+overscan_left=-10
+overscan_right=-10
+overscan_top=-10
+overscan_bottom=-10
 ```
 dst....
 
@@ -150,11 +150,11 @@ Untuk mempermudah, anda bisa melakukan instalasi melalui remote SSH dan VNC
 ### UPDATE OS
 - Perintah update.
 ```
-	sudo apt-get update
+sudo apt-get update
 ```
 - Perintan upgrade
 ```
-	sudo apt-get upgrade
+sudo apt-get upgrade
 ```
 
 ----
@@ -162,29 +162,29 @@ Untuk mempermudah, anda bisa melakukan instalasi melalui remote SSH dan VNC
 ### INSTALL APACHE DAN PHP SERVER SERTA INSTALASI WEB
 1. Instal apache dan PHP.
 ```  
-	sudo apt install apache2
-	sudo apt install php php-mbstring
+sudo apt install apache2
+sudo apt install php php-mbstring
 ```
 
 2. Ganti owner folder html.  
 Default owner pada `/var/www/html` adalah root (user pi tidak punya akses pada folder tersebut)
 ```
-	sudo chown pi:pi /var/www/html
+sudo chown pi:pi /var/www/html
 ```
 3. Copy kan aplikasi menggunakan WinSCP
 4. Ganti owner ke www-data.  
 User untuk apache adalah www-data, jadi untuk owner pada semua folder, sub folder dan file di `/var/www/html/` harus diganti ke www-data.
 ```
-	sudo chown -R www-data:www-data /var/www/html/
+sudo chown -R www-data:www-data /var/www/html/
 ```
 > Jika anda akan mengcopy kan file kembali dari WinSCP pada folder `/var/www/html/` maka owner harus dikembalikan ke pi :  
 	```
-		sudo chown -R pi:pi /var/www/html/
+	sudo chown -R pi:pi /var/www/html/
 	```
 
 5. Enable rewrite untuk proteksi database.
 ```
-	sudo nano /etc/apache2/sites-enabled/000-default.conf
+sudo nano /etc/apache2/sites-enabled/000-default.conf
 ```
 tambahkan baris berikut:
 ```
@@ -194,11 +194,11 @@ tambahkan baris berikut:
 ```
 6. Restart apache server dengan perintah:
 ```
-	sudo systemctl restart apache2
+sudo systemctl restart apache2
 ```
 atau
 ```
-	sudo service apache2 restart
+sudo service apache2 restart
 ```
 7. Enable sound permission pada browser chrome.  
 Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.
@@ -317,41 +317,41 @@ sudo nano /lib/udev/hwclock-set
 ```
 Berikan Comment pada baris berikut :
 ```
-	#if [ -e /run/systemd/system ] ; then
-	# exit 0
-	#fi
+#if [ -e /run/systemd/system ] ; then
+# exit 0
+#fi
 ```
 
 - Lakukan restart raspberry
 ```
-	sudo reboot
+sudo reboot
 ```
 
 
 - Beberapa perintah untuk modul RTC.  
 	- Membaca waktu dari Raspberry
 	```
-		date
+	date
 	```
 	- Mengganti Waktu pada Raspberry
 	```
-		sudo date -s “DD MMM YYYY HH:MM:SS”
+	sudo date -s “DD MMM YYYY HH:MM:SS”
 	```
 	- Mengganti waktu pada RTC
 	```
-		sudo hwclock --set --date="YYYY-MM-DD HH:MM:SS" --localtime
+	sudo hwclock --set --date="YYYY-MM-DD HH:MM:SS" --localtime
 	```
 	- Membaca Waktu dari Module RTC
 	```
-		sudo hwclock -r 
+	sudo hwclock -r 
 	```
 	- Menulis waktu ke Module RTC Dari Raspberry.
 	```
-		sudo hwclock -w
+	sudo hwclock -w
 	```
 	- Menulis waktu Ke Raspberry Dari Module RTC
 	```
-		sudo hwclock -s
+	sudo hwclock -s
 	```
 
 - Lain-lain.  
@@ -379,16 +379,16 @@ User untuk apache server adalah www-data, defaultnya tidak memiliki akses apapun
 - Akses www-data untuk shutdown, restart, update jam.  
 Jalan perintah berikut pada terminal:
 ```
-	sudo visudo
+sudo visudo
 ```
 tambahkan baris berikut
 ```
-	www-data ALL = NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/hwclock
+www-data ALL = NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/hwclock
 ```
 > editor disini masih menggunakan nano sehingga untuk menyimpan dan keluar masih menggunakan `CTRL + x`
 - Akses untuk cek temperatur
 ```
-	sudo usermod -G video www-data
+sudo usermod -G video www-data
 ```
 > code pada PHP nya :
 ```php
@@ -399,7 +399,7 @@ tambahkan baris berikut
 ```
 - Restart apache 
 ```
-	sudo service apache2 restart
+sudo service apache2 restart
 ```	
 
 ----
@@ -409,30 +409,30 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 - Install dnsmasq dan hostapd.  
 Jalan perintah berikut pada terminal:
 ```
-	sudo apt install dnsmasq hostapd
+sudo apt install dnsmasq hostapd
 ```
 - Stop service.  
 Jalan perintah berikut pada terminal:
 ```
-	sudo systemctl stop dnsmasq
-	sudo systemctl stop hostapd
+sudo systemctl stop dnsmasq
+sudo systemctl stop hostapd
 ```
 - Setting IP static pada wireless.  
 Jalan perintah berikut pada terminal:
 ```
-	sudo nano /etc/dhcpcd.conf
+sudo nano /etc/dhcpcd.conf
 ```
 tambahkan baris berikut
 ```
-	interface wlan0
-		static ip_address=10.10.10.10/24
-		nohook wpa_supplicant
+interface wlan0
+	static ip_address=10.10.10.10/24
+	nohook wpa_supplicant
 ```
 
 - Restart service dhcpcd.  
 Jalan perintah berikut pada terminal untuk restart dhcp:
 ```
-	sudo service dhcpcd restart
+sudo service dhcpcd restart
 ```
  **PERINGATAN!  JANGAN JALANKAN RESTART DHCPD JIKA ANDA KONEKSI KE RASPBERRY VIA REMOTE**  
 > jangan dijalankan jika via remote, karena akan mematikan koneksi wifi raspberry ke access point.  
@@ -441,74 +441,74 @@ Jalan perintah berikut pada terminal untuk restart dhcp:
 - Configuring the DHCP server (dnsmasq).  
 	- Backup dulu config lama.
 	```
-		sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+	sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
 	```
 	- Buat config baru
 	```
-		sudo nano /etc/dnsmasq.conf
+	sudo nano /etc/dnsmasq.conf
 	```
 	isikan baris berikut
 	```
-		interface=wlan0
-		dhcp-range=10.10.10.100,10.10.10.120,255.255.255.0,24h
+	interface=wlan0
+	dhcp-range=10.10.10.100,10.10.10.120,255.255.255.0,24h
 	```
 
 - Jalankan service dnsmasq
 ```
-	sudo systemctl start dnsmasq
+sudo systemctl start dnsmasq
 ```
 
 - Konfigurasi akses poin
 ```
-	sudo nano /etc/hostapd/hostapd.conf
+sudo nano /etc/hostapd/hostapd.conf
 ```
 isi berikut:
 ```
-	interface=wlan0
-	driver=nl80211
-	hw_mode=g
-	channel=6
-	ieee80211n=1
-	wmm_enabled=1
-	ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
-	macaddr_acl=0
-	ignore_broadcast_ssid=0
+interface=wlan0
+driver=nl80211
+hw_mode=g
+channel=6
+ieee80211n=1
+wmm_enabled=1
+ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
+macaddr_acl=0
+ignore_broadcast_ssid=0
 
-	# Use WPA2
-	auth_algs=1
-	wpa=2
-	wpa_key_mgmt=WPA-PSK
-	wpa_pairwise=TKIP
-	rsn_pairwise=CCMP
+# Use WPA2
+auth_algs=1
+wpa=2
+wpa_key_mgmt=WPA-PSK
+wpa_pairwise=TKIP
+rsn_pairwise=CCMP
 
-	# nama SSID bisa diganti sesuai keinginan anda
-	ssid=DisplayMasjid
+# nama SSID bisa diganti sesuai keinginan anda
+ssid=DisplayMasjid
 
-	# password wifi, bisa anda ganti juga
-	wpa_passphrase=12345678
+# password wifi, bisa anda ganti juga
+wpa_passphrase=12345678
 ```
 
 - Setting default hostapd
 ```
-	sudo nano /etc/default/hostapd
+sudo nano /etc/default/hostapd
 ```
 cari DAEMON_CONF (`CTRL +w`), hilangkan komen dan isikan berikut
 ```
-	DAEMON_CONF="/etc/hostapd/hostapd.conf"
+DAEMON_CONF="/etc/hostapd/hostapd.conf"
 ```
 - Start hostapd
 ```
-	sudo systemctl unmask hostapd
-	sudo systemctl enable hostapd
+sudo systemctl unmask hostapd
+sudo systemctl enable hostapd
 ```
 - Start hostapd.  
 	- jika tidak lewat remote bisa jalankan perintah berikut:
 	```
-		sudo systemctl start hostapd
+	sudo systemctl start hostapd
 	```
 	- jika via remote langsung reboot raspi saja
 	```
-		sudo reboot
+	sudo reboot
 	```
 
 - Setelah restart, raspberry akan menjadi akses point 
@@ -522,26 +522,26 @@ cari DAEMON_CONF (`CTRL +w`), hilangkan komen dan isikan berikut
 - Troubleshoting.  
 	- cara cek hostapd
 	```
-		sudo systemctl status hostapd
+	sudo systemctl status hostapd
 	```
 	- cara cek dnsmasq
 	```
-		sudo systemctl status dnsmasq
+	sudo systemctl status dnsmasq
 	```
 
 	- Jika raspberry tidak menjadi akses point.  
 		- Untuk mengembalikan menjadi client (wifi)
 		```
-			sudo nano /etc/dhcpcd.conf
+		sudo nano /etc/dhcpcd.conf
 		```
 		komen pada baris :
 		```
-			#interface wlan0
-			#static ip_address=10.10.10.10/24
-			#nohook wpa_supplicant
+		#interface wlan0
+		#static ip_address=10.10.10.10/24
+		#nohook wpa_supplicant
 		```
 		- Cek kesalahan pada konfigurasi akses point:
 		```
-			sudo nano /etc/hostapd/hostapd.conf
+		sudo nano /etc/hostapd/hostapd.conf
 		```
 	
