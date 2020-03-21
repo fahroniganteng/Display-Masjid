@@ -250,7 +250,7 @@ sudo apt install i2c-tools
 ```
 - Ganti lokasi indonesia.  
 > jika sudah setting pada wizard saat pertama kali menjalankan os raspberry pi, proses ini bisa dilewati. 
- 
+
 	- Ketik perintah berikut pada terminal:
 	```
 	sudo raspi-config
@@ -356,22 +356,23 @@ sudo reboot
 
 - Lain-lain.  
 Script PHP update jam pada proses.php adalah:
-```php
-	/*
-	format waktu $this->dt adalah YYYY-MM-DD HH:MM:SS
-	*/
-	private function updateClock(){
-		//update jam rtc
-		$update = exec ('sudo hwclock --set --date="'.$this->dt.'" --localtime');
-		//raspi update dari rtc
-		exec ('sudo hwclock -s');
-		if($update)
-			$this->retError('Error : '.$update);
-		else
-			$this->retSuccess();
-	}
-```
+	```php
+		/*
+		format waktu $this->dt adalah YYYY-MM-DD HH:MM:SS
+		*/
+		private function updateClock(){
+			//update jam rtc
+			$update = exec ('sudo hwclock --set --date="'.$this->dt.'" --localtime');
+			//raspi update dari rtc
+			exec ('sudo hwclock -s');
+			if($update)
+				$this->retError('Error : '.$update);
+			else
+				$this->retSuccess();
+		}
+	```
 jika menggunakan board selain raspberry pi, lakukan modifikasi pada fungsi diatas
+
 ----
 
 ### BERI AKSES PADA APACHE
