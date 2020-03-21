@@ -320,7 +320,7 @@ chromium-browser --incognito --kiosk http://localhost/display/
 	#if [ -e /run/systemd/system ] ; then
 	# exit 0
 	#fi
-```
+	```
 
 - Lakukan restart raspberry
 	```
