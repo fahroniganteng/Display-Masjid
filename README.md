@@ -42,12 +42,12 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 
 #### Material yang dibutuhkan:
 - Raspberry PI 3 model 3B, 3B+ atau Raspberry PI 4 Model B (pada saat tulisan ini dibuat, model terbaru adalah Raspberry PI 4 Model B).  
-> Aplikasi telah di uji coba pada : 
-> - Raspberry PI 3 model 3B+ `OK`.
-> - Raspberry PI 4 Model B `OK`.
-> - Raspberry PI Zero `Display Lag`.  
- 
- **PERINGATAN! Tidak direkomendasikan menggunakan raspberry pi zero**
+	> Aplikasi telah di uji coba pada : 
+	> - Raspberry PI 3 model 3B+ `OK`.
+	> - Raspberry PI 4 Model B `OK`.
+	> - Raspberry PI Zero `Display Lag`.  
+	 
+	 **PERINGATAN! Tidak direkomendasikan menggunakan raspberry pi zero**
 
 - Micro SD, ukuran 8Gb atau lebih besar.
 - Aksesoris raspberry (charger, heatsink, casing, fan, dll sesuai kebutuhan)
