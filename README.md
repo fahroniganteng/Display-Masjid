@@ -110,7 +110,7 @@ Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
 	- untuk menyimpan dan keluar dari nano ```CTRL + x```
 	- untuk mencari text dari nano ```CTRL + w```
 
-- Jika HDMI tidak muncul di display/monitor (biasanya terjadi pada raspi 2 yang ada 2 slot HDMI)
+- Jika HDMI tidak muncul di display/monitor (biasanya terjadi pada raspberry pi 4 yang ada 2 slot HDMI)
 	buka micro sd di PC dengan card reader, edit config.txt hapus komen baris berikut
 	```
 	# uncomment if hdmi display is not detected and composite is being output
