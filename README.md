@@ -378,139 +378,140 @@ Script PHP update jam pada proses.php adalah:
 ### BERI AKSES PADA APACHE
 User untuk apache server adalah www-data, defaultnya tidak memiliki akses apapun ke sistem.
 - Akses www-data untuk shutdown, restart, update jam.  
-Jalan perintah berikut pada terminal:
-```
-sudo visudo
-```
-tambahkan baris berikut
-```
-www-data ALL = NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/hwclock
-```
-> editor disini masih menggunakan nano sehingga untuk menyimpan dan keluar masih menggunakan `CTRL + x`
-- Akses untuk cek temperatur
-```
-sudo usermod -G video www-data
-```
-> code pada PHP nya :
-```php
-	<?php
-		$temp	= exec("/opt/vc/bin/vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
-		echo $temp . '&#176;C';
-	?>
-```
+	Jalan perintah berikut pada terminal:
+	```
+	sudo visudo
+	```
+	tambahkan baris berikut
+	```
+	www-data ALL = NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/hwclock
+	```
+	> editor disini masih menggunakan nano sehingga untuk menyimpan dan keluar masih menggunakan `CTRL + x`
+	- Akses untuk cek temperatur
+	```
+	sudo usermod -G video www-data
+	```
+	> code pada PHP nya :
+	```php
+		<?php
+			$temp	= exec("/opt/vc/bin/vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
+			echo $temp . '&#176;C';
+		?>
+	```
+	
 - Restart apache 
-```
-sudo service apache2 restart
-```	
+	```
+	sudo service apache2 restart
+	```	
 
 ----
 
 ### SET AS ACCESS POINT
 Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.  
 - Install dnsmasq dan hostapd.  
-Jalan perintah berikut pada terminal:
-```
-sudo apt install dnsmasq hostapd
-```
+	Jalan perintah berikut pada terminal:
+	```
+	sudo apt install dnsmasq hostapd
+	```
 - Stop service.  
-Jalan perintah berikut pada terminal:
-```
-sudo systemctl stop dnsmasq
-sudo systemctl stop hostapd
-```
+	Jalan perintah berikut pada terminal:
+	```
+	sudo systemctl stop dnsmasq
+	sudo systemctl stop hostapd
+	```
 - Setting IP static pada wireless.  
-Jalan perintah berikut pada terminal:
-```
-sudo nano /etc/dhcpcd.conf
-```
-tambahkan baris berikut
-```
-interface wlan0
-	static ip_address=10.10.10.10/24
-	nohook wpa_supplicant
-```
+	Jalan perintah berikut pada terminal:
+	```
+	sudo nano /etc/dhcpcd.conf
+	```
+	tambahkan baris berikut
+	```
+	interface wlan0
+		static ip_address=10.10.10.10/24
+		nohook wpa_supplicant
+	```
 
 - Restart service dhcpcd.  
-Jalan perintah berikut pada terminal untuk restart dhcp:
-```
-sudo service dhcpcd restart
-```
- **PERINGATAN!  JANGAN JALANKAN RESTART DHCPD JIKA ANDA KONEKSI KE RASPBERRY VIA REMOTE**  
-> jangan dijalankan jika via remote, karena akan mematikan koneksi wifi raspberry ke access point.  
-> jika via remote jalankan paling akhir setelah setting IP dan DHCP SERVER, atau langsung restart raspberry.  
+	Jalan perintah berikut pada terminal untuk restart dhcp:
+	```
+	sudo service dhcpcd restart
+	```
+	 **PERINGATAN!  JANGAN JALANKAN RESTART DHCPD JIKA ANDA KONEKSI KE RASPBERRY VIA REMOTE**  
+	> jangan dijalankan jika via remote, karena akan mematikan koneksi wifi raspberry ke access point.  
+	> jika via remote jalankan paling akhir setelah setting IP dan DHCP SERVER, atau langsung restart raspberry.  
 
 - Configuring the DHCP server (dnsmasq).  
 	- Backup dulu config lama.
-	```
-	sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
-	```
+		```
+		sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig
+		```
 	- Buat config baru
-	```
-	sudo nano /etc/dnsmasq.conf
-	```
-	isikan baris berikut
-	```
-	interface=wlan0
-	dhcp-range=10.10.10.100,10.10.10.120,255.255.255.0,24h
-	```
+		```
+		sudo nano /etc/dnsmasq.conf
+		```
+		isikan baris berikut
+		```
+		interface=wlan0
+		dhcp-range=10.10.10.100,10.10.10.120,255.255.255.0,24h
+		```
 
 - Jalankan service dnsmasq
-```
-sudo systemctl start dnsmasq
-```
+	```
+	sudo systemctl start dnsmasq
+	```
 
 - Konfigurasi akses poin
-```
-sudo nano /etc/hostapd/hostapd.conf
-```
-isi berikut:
-```
-interface=wlan0
-driver=nl80211
-hw_mode=g
-channel=6
-ieee80211n=1
-wmm_enabled=1
-ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
-macaddr_acl=0
-ignore_broadcast_ssid=0
+	```
+	sudo nano /etc/hostapd/hostapd.conf
+	```
+	isi berikut:
+	```
+	interface=wlan0
+	driver=nl80211
+	hw_mode=g
+	channel=6
+	ieee80211n=1
+	wmm_enabled=1
+	ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
+	macaddr_acl=0
+	ignore_broadcast_ssid=0
 
-# Use WPA2
-auth_algs=1
-wpa=2
-wpa_key_mgmt=WPA-PSK
-wpa_pairwise=TKIP
-rsn_pairwise=CCMP
+	# Use WPA2
+	auth_algs=1
+	wpa=2
+	wpa_key_mgmt=WPA-PSK
+	wpa_pairwise=TKIP
+	rsn_pairwise=CCMP
 
-# nama SSID bisa diganti sesuai keinginan anda
-ssid=DisplayMasjid
+	# nama SSID bisa diganti sesuai keinginan anda
+	ssid=DisplayMasjid
 
-# password wifi, bisa anda ganti juga
-wpa_passphrase=12345678
-```
+	# password wifi, bisa anda ganti juga
+	wpa_passphrase=12345678
+	```
 
 - Setting default hostapd
-```
-sudo nano /etc/default/hostapd
-```
-cari DAEMON_CONF (`CTRL +w`), hilangkan komen dan isikan berikut
-```
-DAEMON_CONF="/etc/hostapd/hostapd.conf"
-```
+	```
+	sudo nano /etc/default/hostapd
+	```
+	cari DAEMON_CONF (`CTRL +w`), hilangkan komen dan isikan berikut
+	```
+	DAEMON_CONF="/etc/hostapd/hostapd.conf"
+	```
 - Start hostapd
-```
-sudo systemctl unmask hostapd
-sudo systemctl enable hostapd
-```
+	```
+	sudo systemctl unmask hostapd
+	sudo systemctl enable hostapd
+	```
 - Start hostapd.  
 	- jika tidak lewat remote bisa jalankan perintah berikut:
-	```
-	sudo systemctl start hostapd
-	```
+		```
+		sudo systemctl start hostapd
+		```
 	- jika via remote langsung reboot raspi saja
-	```
-	sudo reboot
-	```
+		```
+		sudo reboot
+		```
 
 - Setelah restart, raspberry akan menjadi akses point 
 	- SSID : DisplayMasjid
@@ -522,27 +523,27 @@ sudo systemctl enable hostapd
 
 - Troubleshoting.  
 	- cara cek hostapd
-	```
-	sudo systemctl status hostapd
-	```
+		```
+		sudo systemctl status hostapd
+		```
 	- cara cek dnsmasq
-	```
-	sudo systemctl status dnsmasq
-	```
+		```
+		sudo systemctl status dnsmasq
+		```
 
 	- Jika raspberry tidak menjadi akses point.  
 		- Untuk mengembalikan menjadi client (wifi)
-		```
-		sudo nano /etc/dhcpcd.conf
-		```
-		komen pada baris :
-		```
-		#interface wlan0
-		#static ip_address=10.10.10.10/24
-		#nohook wpa_supplicant
-		```
+			```
+			sudo nano /etc/dhcpcd.conf
+			```
+			komen pada baris :
+			```
+			#interface wlan0
+			#static ip_address=10.10.10.10/24
+			#nohook wpa_supplicant
+			```
 		- Cek kesalahan pada konfigurasi akses point:
-		```
-		sudo nano /etc/hostapd/hostapd.conf
-		```
+			```
+			sudo nano /etc/hostapd/hostapd.conf
+			```
 	
