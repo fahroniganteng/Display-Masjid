@@ -387,17 +387,18 @@ User untuk apache server adalah www-data, defaultnya tidak memiliki akses apapun
 	www-data ALL = NOPASSWD: /sbin/reboot, /sbin/shutdown, /sbin/hwclock
 	```
 	> editor disini masih menggunakan nano sehingga untuk menyimpan dan keluar masih menggunakan `CTRL + x`
+	
 	- Akses untuk cek temperatur
 	```
 	sudo usermod -G video www-data
 	```
 	> code pada PHP nya :
-	```php
+		```php
 		<?php
 			$temp	= exec("/opt/vc/bin/vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
 			echo $temp . '&#176;C';
 		?>
-	```
+		```
 	
 - Restart apache 
 	```
