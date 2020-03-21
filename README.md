@@ -234,10 +234,10 @@ Tambahkan baris berikut
 ```
 chromium-browser --incognito --kiosk http://localhost/display/
 ```
-> Jika menggunakan OS rasbian versi lama, session berada pada `~/.config/lxsession/`, perintah pada terminal:
-```
-sudo nano ~/.config/lxsession/LXDE-pi/autostart
-```
+> Jika menggunakan OS rasbian versi lama, session berada pada `~/.config/lxsession/`, perintah pada terminal:  
+	```
+	sudo nano ~/.config/lxsession/LXDE-pi/autostart
+	```
 
 
 ----
