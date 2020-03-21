@@ -101,7 +101,7 @@ Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
 	- Ikuti menu yang tersedia.
 
 > Default raspbian buster akan muncul wizard konfigurasi (welcome screen) pada saat pertama kali dijalankan.  
-> Lihat video manual install ya kalo masih bingung.
+> Lihat video manual install ya kalo masih bingung (video masih progress upload youtube, link menyusul).
 
 #### Catatan sebelum memulai tutorial:
 - Diperlukan koneksi internet untuk instalasi apache, php, i2c-tools, dnsmasq dan hostapd.  
