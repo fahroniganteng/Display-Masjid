@@ -177,10 +177,10 @@ sudo apt-get upgrade
 	```
 	sudo chown -R www-data:www-data /var/www/html/
 	```
-> Jika anda akan mengcopy kan file kembali dari WinSCP pada folder `/var/www/html/` maka owner harus dikembalikan ke pi :  
-	```
-	sudo chown -R pi:pi /var/www/html/
-	```
+	> Jika anda akan mengcopy kan file kembali dari WinSCP pada folder `/var/www/html/` maka owner harus dikembalikan ke pi :  
+		```
+		sudo chown -R pi:pi /var/www/html/
+		```
 
 5. Enable rewrite untuk proteksi database.
 	```
@@ -201,13 +201,13 @@ sudo apt-get upgrade
 	sudo service apache2 restart
 	```
 7. Enable sound permission pada browser chrome.  
-	Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.
-		- Buka browser chrome (di raspberry)
-		- Alamat http://localhost/display/
-		- Pilih pada `view site information` --> ada di sebelah address (lihat video / googling aja kalo gak nemu)
-		- Pilih `site settings`
-		- Cari `sound`
-		- Pilih `allow`
+Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.  
+	- Buka browser chrome (di raspberry)
+	- Alamat http://localhost/display/
+	- Pilih pada `view site information` --> ada di sebelah address (lihat video / googling aja kalo gak nemu)
+	- Pilih `site settings`
+	- Cari `sound`
+	- Pilih `allow`
 
 ----
 
