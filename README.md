@@ -388,7 +388,7 @@ User untuk apache server adalah www-data, defaultnya tidak memiliki akses apapun
 	```
 	> editor disini masih menggunakan nano sehingga untuk menyimpan dan keluar masih menggunakan `CTRL + x`
 	
-	- Akses untuk cek temperatur
+- Akses untuk cek temperatur
 	```
 	sudo usermod -G video www-data
 	```
