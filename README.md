@@ -74,7 +74,7 @@ Download operasi sistem dan cara instalasi operasi sistem bisa dilihat pada webs
 
 #### Konfigurasi awal
 Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
-- Koneksikan ke wifi dan cek ip raspberry (IP diperlukan untuk remote)
+- Koneksikan ke jaringan dan cek ip raspberry (IP diperlukan untuk remote)
 	- Untuk jaringan wifi cek pada `wlan0`, buka terminal ketik perintah :
 	```
 	sudo ifconfig wlan0
