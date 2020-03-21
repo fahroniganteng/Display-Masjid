@@ -357,19 +357,19 @@ chromium-browser --incognito --kiosk http://localhost/display/
 - Lain-lain.  
 Script PHP update jam pada proses.php adalah:
 	```php
-		/*
-		format waktu $this->dt adalah YYYY-MM-DD HH:MM:SS
-		*/
-		private function updateClock(){
-			//update jam rtc
-			$update = exec ('sudo hwclock --set --date="'.$this->dt.'" --localtime');
-			//raspi update dari rtc
-			exec ('sudo hwclock -s');
-			if($update)
-				$this->retError('Error : '.$update);
-			else
-				$this->retSuccess();
-		}
+	/*
+	format waktu $this->dt adalah YYYY-MM-DD HH:MM:SS
+	*/
+	private function updateClock(){
+		//update jam rtc
+		$update = exec ('sudo hwclock --set --date="'.$this->dt.'" --localtime');
+		//raspi update dari rtc
+		exec ('sudo hwclock -s');
+		if($update)
+			$this->retError('Error : '.$update);
+		else
+			$this->retSuccess();
+	}
 	```
 	jika menggunakan board selain raspberry pi, lakukan modifikasi pada fungsi diatas
 
