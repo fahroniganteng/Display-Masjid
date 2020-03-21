@@ -516,7 +516,8 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 - Setelah restart, raspberry akan menjadi akses point 
 	- SSID : DisplayMasjid
 	- Password : 12345678
-	- Alamat ip raspberry : 10.10.10.10
+	- Alamat ip raspberry : 10.10.10.10  
+	
 	> Untuk konfigurasi admin display masjid, koneksikan HP/Laptop ke akses poin tesebut dan buka browser dengan alamat http://10.10.10.10/  
 	>	- User : admin
 	>	- Password : admin
