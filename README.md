@@ -167,47 +167,47 @@ sudo apt-get upgrade
 	```
 
 2. Ganti owner folder html.  
-Default owner pada `/var/www/html` adalah root (user pi tidak punya akses pada folder tersebut)
-```
-sudo chown pi:pi /var/www/html
-```
+	Default owner pada `/var/www/html` adalah root (user pi tidak punya akses pada folder tersebut)
+	```
+	sudo chown pi:pi /var/www/html
+	```
 3. Copy kan aplikasi menggunakan WinSCP
 4. Ganti owner ke www-data.  
-User untuk apache adalah www-data, jadi untuk owner pada semua folder, sub folder dan file di `/var/www/html/` harus diganti ke www-data.
-```
-sudo chown -R www-data:www-data /var/www/html/
-```
+	User untuk apache adalah www-data, jadi untuk owner pada semua folder, sub folder dan file di `/var/www/html/` harus diganti ke www-data.
+	```
+	sudo chown -R www-data:www-data /var/www/html/
+	```
 > Jika anda akan mengcopy kan file kembali dari WinSCP pada folder `/var/www/html/` maka owner harus dikembalikan ke pi :  
 	```
 	sudo chown -R pi:pi /var/www/html/
 	```
 
 5. Enable rewrite untuk proteksi database.
-```
-sudo nano /etc/apache2/sites-enabled/000-default.conf
-```
-tambahkan baris berikut:
-```
-<Directory /var/www/html>
-	AllowOverride All
-</Directory>
-```
+	```
+	sudo nano /etc/apache2/sites-enabled/000-default.conf
+	```
+	tambahkan baris berikut:
+	```
+	<Directory /var/www/html>
+		AllowOverride All
+	</Directory>
+	```
 6. Restart apache server dengan perintah:
-```
-sudo systemctl restart apache2
-```
-atau
-```
-sudo service apache2 restart
-```
+	```
+	sudo systemctl restart apache2
+	```
+	atau
+	```
+	sudo service apache2 restart
+	```
 7. Enable sound permission pada browser chrome.  
-Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.
-	- Buka browser chrome (di raspberry)
-	- Alamat http://localhost/display/
-	- Pilih pada `view site information` --> ada di sebelah address (lihat video / googling aja kalo gak nemu)
-	- Pilih `site settings`
-	- Cari `sound`
-	- Pilih `allow`
+	Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.
+		- Buka browser chrome (di raspberry)
+		- Alamat http://localhost/display/
+		- Pilih pada `view site information` --> ada di sebelah address (lihat video / googling aja kalo gak nemu)
+		- Pilih `site settings`
+		- Cari `sound`
+		- Pilih `allow`
 
 ----
 
