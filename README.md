@@ -371,7 +371,7 @@ Script PHP update jam pada proses.php adalah:
 				$this->retSuccess();
 		}
 	```
-jika menggunakan board selain raspberry pi, lakukan modifikasi pada fungsi diatas
+	jika menggunakan board selain raspberry pi, lakukan modifikasi pada fungsi diatas
 
 ----
 
