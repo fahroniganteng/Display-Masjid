@@ -393,7 +393,7 @@ User untuk apache server adalah www-data, defaultnya tidak memiliki akses apapun
 	sudo usermod -G video www-data
 	```
 	> code pada PHP nya :
-	```php
+	> ```php
 	<?php
 		$temp	= exec("/opt/vc/bin/vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
 		echo $temp . '&#176;C';
