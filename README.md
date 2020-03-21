@@ -161,10 +161,10 @@ sudo apt-get upgrade
 
 ### INSTALL APACHE DAN PHP SERVER SERTA INSTALASI WEB
 1. Instal apache dan PHP.
-```  
-sudo apt install apache2
-sudo apt install php php-mbstring
-```
+	```  
+	sudo apt install apache2
+	sudo apt install php php-mbstring
+	```
 
 2. Ganti owner folder html.  
 Default owner pada `/var/www/html` adalah root (user pi tidak punya akses pada folder tersebut)
