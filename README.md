@@ -489,10 +489,10 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 		dhcp-range=10.10.10.100,10.10.10.120,255.255.255.0,24h
 		```
 
-- Jalankan service dnsmasq
-	```
-	sudo systemctl start dnsmasq
-	```
+	- Jalankan service dnsmasq
+		```
+		sudo systemctl start dnsmasq
+		```
 
 - Konfigurasi akses poin
 	```
@@ -524,28 +524,28 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 	wpa_passphrase=12345678
 	```
 
-- Setting default hostapd
-	```
-	sudo nano /etc/default/hostapd
-	```
-	cari DAEMON_CONF (`CTRL +w`), hilangkan komen dan isikan berikut
-	```
-	DAEMON_CONF="/etc/hostapd/hostapd.conf"
-	```
-- Enable hostapd
-	```
-	sudo systemctl unmask hostapd
-	sudo systemctl enable hostapd
-	```
-- Start hostapd.  
-	- jika tidak lewat remote bisa jalankan perintah berikut:
+	- Setting default hostapd
 		```
-		sudo systemctl start hostapd
+		sudo nano /etc/default/hostapd
 		```
-	- jika via remote langsung reboot raspi saja
+		cari DAEMON_CONF (`CTRL +w`), hilangkan komen dan isikan berikut
 		```
-		sudo reboot
+		DAEMON_CONF="/etc/hostapd/hostapd.conf"
 		```
+	- Enable hostapd
+		```
+		sudo systemctl unmask hostapd
+		sudo systemctl enable hostapd
+		```
+	- Start hostapd.  
+		- jika tidak lewat remote bisa jalankan perintah berikut:
+			```
+			sudo systemctl start hostapd
+			```
+		- jika via remote langsung reboot raspi saja
+			```
+			sudo reboot
+			```
 
 - Setelah restart, raspberry akan menjadi akses point 
 	- SSID : DisplayMasjid
