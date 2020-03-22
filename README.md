@@ -185,7 +185,7 @@ Untuk mempermudah, anda bisa melakukan instalasi melalui remote SSH dan VNC
 ```
 sudo apt-get update
 ```
-- Perintan upgrade
+- Perintah upgrade
 ```
 sudo apt-get upgrade
 ```
