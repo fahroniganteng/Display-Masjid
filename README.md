@@ -3,19 +3,44 @@
 > English version is coming soon...
 
 Aplikasi display masjid digunakan sebagai media informasi pada masjid dan musholla.  
-Fitur yang tersedia dialamnya:
+
+Aplikasi menggunakan bahasa pemrograman PHP dan penyimpanan data dengan file JSON, di design untuk board raspberry pi, penggunaan pada board/device lain mungkin tidak kompatibel atau memerlukan modifikasi program (cek pada menu MATERIAL DAN OS di bawah untuk device yang pernah dicoba).  
+Aplikasi ini gratis dan open source dibawah lisensi **MIT**  
+
+Fitur yang tersedia didalamnya:
 - **OFFLINE**, tidak memerlukan koneksi internet.
-- Waktu sholat (library perhitungan waktu sholat dari [praytimes.org](http://praytimes.org/)) bisa disetting dengan lokasi koordinat.
-- Display informasi
-- Running text
-- Wallpaper
-- Count down menuju waktu sholat
-- Count down iqomah
+- Waktu sholat.  
+	- Library perhitungan waktu sholat dari [praytimes.org](http://praytimes.org/).
+	- Kofigurasi waktu sholat dengan koordinat dan metode perhitungan, sekali setting untuk selamanya.
+		- MWL	: Muslim World League
+		- ISNA	: Islamic Society of North America
+		- Egypt	: Egyptian General Authority of Survey
+		- Makkah	: Umm al-Qura University, Makkah
+		- Karachi	: University of Islamic Sciences, Karachi
+		- Tehran	: Institute of Geophysics, University of Tehran
+		- Jafari	: Shia Ithna Ashari (Ja'fari)
+		- Manual.
+		
+		> Untuk indonesia menggunakan metode dari kemenag, pilih pada manual.  
+		> Cara pengisian ada pada menu admin.
+	- Terdapat fitur simulasi waktu sholat di menu admin.  
+		Akurasi perhitungan waktu sholat dari library [praytimes.org](http://praytimes.org/) cukup baik, sudah dicoba untuk dibandingkan dengan situs https://jadwalsholat.pkpu.or.id/ dalam kurun waktu 1 tahun (1 januari 2020 sampai 31 desember 2020) untuk wilayah bekasi, dengam koordinat dan metode yang sama, hasilnya selisih perhitungan maksimal hanya 1 menit. (file komparasi bisa di lihat [disini](readme-image/compare.xlsx))
+	- Terdapat menu penyesuaian waktu sholat -60 sampai +60 menit.
+		Contoh penggunaan : jadwal ditambahkan +2 menit untuk ihtiyati (pengaman), dll.
+- Display informasi masjid/musholla.
+- Running text.
+- Ganti Wallpaper dan logo.
+- Count down menuju waktu sholat.
+- Count down iqomah dan suara beep untuk peringatan waktu iqomah akan habis.
+	Lama waktu iqomah bisa di setting berbeda pada masing-masing waktu sholat.
 - Display kalem pada waktu sholat dan khutbah agar tidak mengganggu.
 - Sholat jum'at (opsional, bisa dimatikan)
 - Sholat tarawih (opsional, bisa dimatikan)
+- Menu admin mudah.  
+	Menu admin web base, sehingga cukup menggunakan browser yang biasanya sudah ada pada HP atau laptop, dan tidak memerlukan aplikasi tambahan.  
+	Bisa dijalankan menggunakan HP (android/iphone), laptop atau device lain yang memiliki koneksi wifi.
 
-Aplikasi ini gratis dan open source dibawah lisensi **MIT**
+
 
 
 ### Overview
@@ -52,6 +77,7 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 - Micro SD, ukuran 8Gb atau lebih besar.
 - Aksesoris raspberry (charger, heatsink, casing, fan, dll sesuai kebutuhan)
 - Modul RTC
+- Display (TV atau monitor)
 
 > **CATATAN**  
 > - Aplikasi ini di desain untuk berjalan di board raspberry pi, namun pernah dicoba menggunakan mini PC dengan prosesor intel dual core, ram 1Gb, dengan OS Raspberry PI Desktop, bisa berjalan dengan baik. Namun untuk konfigurasi waktu tidak menggunakan manual disini (karena tidak ada tambahan modul RTC), dan setting waktu di menu admin tidak bisa digunakan, karena pada script PHP mengirim perintah untuk update waktu ke modul RTC, sehingga perlu dilakukan perubahan script pada file proses.php agar dapat digunakan.  
