@@ -277,7 +277,7 @@ chromium-browser --incognito --kiosk http://localhost/display/
 ----
 
 ### INSTALL RTC
-- Pastikan **RTC modul** sudah terpasang pada GPIO raspberry di pin 1,3,5,7 (anda bisa cari di internet untuk lebih jelasnya)
+- Pastikan **RTC modul** sudah terpasang pada GPIO raspberry di pin 1,3,5,7,9 (anda bisa cari di internet untuk lebih jelasnya)
 - Install i2c-tools, ketik perintah berikut pada terminal:
 	```
 	sudo apt install i2c-tools
