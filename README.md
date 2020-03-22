@@ -9,6 +9,7 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 
 Fitur yang tersedia didalamnya:
 - **OFFLINE**, tidak memerlukan koneksi internet.
+- **STANDALONE**, tidak memerlukan tambahan perangkat jaringan lain seperti router, modem, hub dll.
 - Waktu sholat.  
 	- Library perhitungan waktu sholat dari [praytimes.org](http://praytimes.org/).
 	- Kofigurasi waktu sholat dengan koordinat dan metode perhitungan, sekali setting untuk selamanya.
@@ -41,7 +42,9 @@ Fitur yang tersedia didalamnya:
 - Menu admin mudah digunakan.  
 	Menu admin bisa dijalankan dengan HP (android/iphone), laptop atau device lain secara wireless dengan koneksi wifi.  
 	Menu admin web base, sehingga tidak memerlukan aplikasi tambahan, cukup menggunakan browser yang sudah ada pada HP atau laptop.  
-	
+- Untuk pengembangan, bisa digunakan untuk beberapa display di dalam masjid/musholla secara wireless, dengan konfigurasi 1 device untuk server dan device lainnya sebagai client.
+	- 1 device (board raspberry pi) digunakan untuk server dengan setting seperti manual dibawah, dan ditambahkan setting NTP server (broadcast).  
+	- Device lainnya hanya sebagai client yang menampilkan halaman web dari server dengan konfigurasi update waktu (NTP client) ke device server agar waktu yang ditampilkan sama (tidak perlu menambahkan modul RTC pada raspberry). 
 
 
 
