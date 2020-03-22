@@ -7,7 +7,7 @@ Aplikasi display masjid digunakan sebagai media informasi pada masjid dan mushol
 Aplikasi berbasis web dengan menggunakan bahasa pemrograman PHP dan penyimpanan data dalam file JSON, di design untuk board raspberry pi, penggunaan pada board/device lain mungkin tidak kompatibel atau memerlukan modifikasi program (cek pada menu MATERIAL DAN OS di bawah untuk device yang pernah dicoba).  
 Aplikasi ini gratis dan open source dibawah lisensi **MIT**  
 
-Fitur yang tersedia didalamnya:
+## Fitur:
 - **OFFLINE**, tidak memerlukan koneksi internet.
 - **STANDALONE**, tidak memerlukan tambahan perangkat jaringan lain seperti router, modem, hub dll.
 - Waktu sholat.  
