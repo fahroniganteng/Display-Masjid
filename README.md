@@ -495,36 +495,37 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 		```
 
 - Konfigurasi akses poin
-	```
-	sudo nano /etc/hostapd/hostapd.conf
-	```
-	isi berikut:
-	```
-	interface=wlan0
-	driver=nl80211
-	hw_mode=g
-	channel=6
-	ieee80211n=1
-	wmm_enabled=1
-	ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
-	macaddr_acl=0
-	ignore_broadcast_ssid=0
+	- Konfigurasi hostapd
+		```
+		sudo nano /etc/hostapd/hostapd.conf
+		```
+		isi berikut:
+		```
+		interface=wlan0
+		driver=nl80211
+		hw_mode=g
+		channel=6
+		ieee80211n=1
+		wmm_enabled=1
+		ht_capab=[HT40][SHORT-GI-20][DSSS_CCK-40]
+		macaddr_acl=0
+		ignore_broadcast_ssid=0
 
-	# Use WPA2
-	auth_algs=1
-	wpa=2
-	wpa_key_mgmt=WPA-PSK
-	wpa_pairwise=TKIP
-	rsn_pairwise=CCMP
+		# Use WPA2
+		auth_algs=1
+		wpa=2
+		wpa_key_mgmt=WPA-PSK
+		wpa_pairwise=TKIP
+		rsn_pairwise=CCMP
 
-	# nama SSID bisa diganti sesuai keinginan anda
-	ssid=DisplayMasjid
+		# nama SSID bisa diganti sesuai keinginan anda
+		ssid=DisplayMasjid
 
-	# password wifi, bisa anda ganti juga
-	wpa_passphrase=12345678
-	```
+		# password wifi, bisa anda ganti juga
+		wpa_passphrase=12345678
+		```
 
-	- Setting default hostapd
+	- Default hostapd
 		```
 		sudo nano /etc/default/hostapd
 		```
@@ -542,7 +543,7 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 			```
 			sudo systemctl start hostapd
 			```
-		- jika via remote langsung reboot raspi saja
+		- jika via remote lakukan restart
 			```
 			sudo reboot
 			```
