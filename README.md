@@ -139,7 +139,7 @@ Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
 
 #### Catatan sebelum memulai instalasi:
 - Diperlukan koneksi internet untuk instalasi apache, php, i2c-tools, dnsmasq dan hostapd.  
-- Pada video tutorial menggunakan wifi koneksi menggunakan wifi.
+- Pada video tutorial koneksi menggunakan wifi.
 - Text editor bawaan raspberry adalah nano
 	- untuk menyimpan dan keluar dari nano ```CTRL + x```
 	- untuk mencari text dari nano ```CTRL + w```
