@@ -25,7 +25,7 @@ Fitur yang tersedia didalamnya:
 		> Cara pengisian ada pada menu admin.
 	- Terdapat fitur simulasi waktu sholat di menu admin.  
 		Akurasi perhitungan waktu sholat dari library [praytimes.org](http://praytimes.org/) cukup baik, sudah dicoba untuk dibandingkan dengan situs https://jadwalsholat.pkpu.or.id/ dalam kurun waktu 1 tahun (1 januari 2020 sampai 31 desember 2020) untuk wilayah bekasi, dengam koordinat dan metode yang sama, hasilnya selisih perhitungan maksimal hanya 1 menit. (file excel komparasi bisa di lihat [disini](readme-image/compare.xlsx))
-	- Terdapat menu penyesuaian waktu sholat -60 sampai +60 menit.
+	- Terdapat menu penyesuaian waktu sholat -60 sampai +60 menit.  
 		Contoh penggunaan : jadwal ditambahkan +2 menit untuk ihtiyati (pengaman), dll.
 - Display informasi masjid/musholla, bisa ditambah/diganti.
 - Running text, bisa ditambah/diganti.
