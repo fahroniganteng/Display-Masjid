@@ -4,7 +4,7 @@
 
 Aplikasi display masjid digunakan sebagai media informasi pada masjid dan musholla.  
 
-Aplikasi menggunakan bahasa pemrograman PHP dan penyimpanan data dengan file JSON, di design untuk board raspberry pi, penggunaan pada board/device lain mungkin tidak kompatibel atau memerlukan modifikasi program (cek pada menu MATERIAL DAN OS di bawah untuk device yang pernah dicoba).  
+Aplikasi berbasis web dengan menggunakan bahasa pemrograman PHP dan penyimpanan data dalam file JSON, di design untuk board raspberry pi, penggunaan pada board/device lain mungkin tidak kompatibel atau memerlukan modifikasi program (cek pada menu MATERIAL DAN OS di bawah untuk device yang pernah dicoba).  
 Aplikasi ini gratis dan open source dibawah lisensi **MIT**  
 
 Fitur yang tersedia didalamnya:
@@ -31,7 +31,7 @@ Fitur yang tersedia didalamnya:
 - Display informasi masjid/musholla, bisa ditambah/diganti.
 - Running text, bisa ditambah/diganti.
 - Gambar latar belakang (wallpaper) juga bisa ditambah/diganti.
-- Logo masjid/musholla.
+- Logo masjid/musholla bisa diganti.
 - Count down menuju waktu sholat.
 - Count down iqomah dan suara beep untuk peringatan waktu iqomah akan habis.
 	Durasi iqomah bisa di setting berbeda pada masing-masing waktu sholat.
