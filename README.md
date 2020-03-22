@@ -250,7 +250,7 @@ Jalankan perintah berikut pada terminal.
 ```
 sudo nano /etc/lightdm/lightdm.conf
 ```
-Tambahkan baris berikut
+Cari `xserver-command=X`, tambahkan baris berikut
 ```
 xserver-command=X -s 0 dpms -nocursor
 ```
