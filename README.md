@@ -24,21 +24,24 @@ Fitur yang tersedia didalamnya:
 		> Untuk indonesia menggunakan metode dari kemenag, pilih pada manual.  
 		> Cara pengisian ada pada menu admin.
 	- Terdapat fitur simulasi waktu sholat di menu admin.  
-		Akurasi perhitungan waktu sholat dari library [praytimes.org](http://praytimes.org/) cukup baik, sudah dicoba untuk dibandingkan dengan situs https://jadwalsholat.pkpu.or.id/ dalam kurun waktu 1 tahun (1 januari 2020 sampai 31 desember 2020) untuk wilayah bekasi, dengam koordinat dan metode yang sama, hasilnya selisih perhitungan maksimal hanya 1 menit. (file komparasi bisa di lihat [disini](readme-image/compare.xlsx))
+		Akurasi perhitungan waktu sholat dari library [praytimes.org](http://praytimes.org/) cukup baik, sudah dicoba untuk dibandingkan dengan situs https://jadwalsholat.pkpu.or.id/ dalam kurun waktu 1 tahun (1 januari 2020 sampai 31 desember 2020) untuk wilayah bekasi, dengam koordinat dan metode yang sama, hasilnya selisih perhitungan maksimal hanya 1 menit. (file excel komparasi bisa di lihat [disini](readme-image/compare.xlsx))
 	- Terdapat menu penyesuaian waktu sholat -60 sampai +60 menit.
 		Contoh penggunaan : jadwal ditambahkan +2 menit untuk ihtiyati (pengaman), dll.
-- Display informasi masjid/musholla.
-- Running text.
-- Ganti Wallpaper dan logo.
+- Display informasi masjid/musholla, bisa ditambah/diganti.
+- Running text, bisa ditambah/diganti.
+- Gambar latar belakang (wallpaper) juga bisa ditambah/diganti.
+- Logo masjid/musholla.
 - Count down menuju waktu sholat.
 - Count down iqomah dan suara beep untuk peringatan waktu iqomah akan habis.
-	Lama waktu iqomah bisa di setting berbeda pada masing-masing waktu sholat.
+	Durasi iqomah bisa di setting berbeda pada masing-masing waktu sholat.
+- Durasi waktu (timer) count down, sholat, iqomah, khutbah dan wallpaper bisa diatur.
 - Display kalem pada waktu sholat dan khutbah agar tidak mengganggu.
 - Sholat jum'at (opsional, bisa dimatikan)
 - Sholat tarawih (opsional, bisa dimatikan)
-- Menu admin mudah.  
-	Menu admin web base, sehingga cukup menggunakan browser yang biasanya sudah ada pada HP atau laptop, dan tidak memerlukan aplikasi tambahan.  
-	Bisa dijalankan menggunakan HP (android/iphone), laptop atau device lain yang memiliki koneksi wifi.
+- Menu admin mudah digunakan.  
+	Menu admin bisa dijalankan dengan HP (android/iphone), laptop atau device lain secara wireless dengan koneksi wifi.  
+	Menu admin web base, sehingga tidak memerlukan aplikasi tambahan, cukup menggunakan browser yang sudah ada pada HP atau laptop.  
+	
 
 
 
