@@ -12,7 +12,7 @@ Fitur yang tersedia didalamnya:
 - **STANDALONE**, tidak memerlukan tambahan perangkat jaringan lain seperti router, modem, hub dll.
 - Waktu sholat.  
 	- Library perhitungan waktu sholat dari [praytimes.org](http://praytimes.org/).
-	- Kofigurasi waktu sholat dengan koordinat dan metode perhitungan, sekali setting untuk selamanya.
+	- Konfigurasi waktu sholat dengan koordinat dan metode perhitungan, sekali setting untuk selamanya.
 		- MWL	: Muslim World League
 		- ISNA	: Islamic Society of North America
 		- Egypt	: Egyptian General Authority of Survey
