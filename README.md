@@ -135,7 +135,7 @@ Jalankan raspi, pasang keyboard dan mouse lakukan konfigurasi berikut :
 > Default raspbian buster akan muncul wizard konfigurasi (welcome screen) pada saat pertama kali dijalankan.  
 > Lihat video manual install ya kalo masih bingung (video masih progress upload youtube, link menyusul).
 
-#### Catatan sebelum memulai tutorial:
+#### Catatan sebelum memulai instalasi:
 - Diperlukan koneksi internet untuk instalasi apache, php, i2c-tools, dnsmasq dan hostapd.  
 - Pada video tutorial menggunakan wifi koneksi menggunakan wifi.
 - Text editor bawaan raspberry adalah nano
@@ -213,7 +213,8 @@ sudo apt-get upgrade
 		sudo chown -R pi:pi /var/www/html/
 		```
 
-5. Enable rewrite untuk proteksi database.
+5. Enable rewrite untuk proteksi database.  
+	Penyimpanan data (database) pada aplikasi ini menggunakan file json pada folder db, defaultnya file ini bisa diakses dari halaman website, sehingga user dan password aplikasi bisa terbaca, maka perlu diproteksi agar tidak dapat diakses melalui website.
 	```
 	sudo nano /etc/apache2/sites-enabled/000-default.conf
 	```
