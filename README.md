@@ -44,7 +44,7 @@ Fitur yang tersedia didalamnya:
 	Menu admin web base, sehingga tidak memerlukan aplikasi tambahan, cukup menggunakan browser yang sudah ada pada HP atau laptop.  
 - Untuk pengembangan, bisa digunakan untuk beberapa display di dalam masjid/musholla secara wireless, dengan konfigurasi 1 device untuk server dan device lainnya sebagai client.
 	- 1 device (board raspberry pi) digunakan untuk server dengan setting seperti manual dibawah, dan ditambahkan setting NTP server (broadcast).  
-	- Device lainnya hanya sebagai client yang menampilkan halaman web dari server dengan konfigurasi update waktu (NTP client) ke device server agar waktu yang ditampilkan sama (tidak perlu menambahkan modul RTC pada raspberry). 
+	- Device lainnya hanya sebagai client yang menampilkan halaman web dari server dengan konfigurasi update waktu (NTP client) ke device server agar waktu yang ditampilkan sama (tidak perlu menambahkan modul RTC pada raspberry client). 
 
 
 
