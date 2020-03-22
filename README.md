@@ -204,7 +204,7 @@ sudo apt-get upgrade
 	```
 	sudo chown pi:pi /var/www/html
 	```
-3. Copy kan aplikasi menggunakan WinSCP
+3. Copy kan file aplikasi display masjid menggunakan WinSCP ke `/var/www/html`
 4. Ganti owner ke www-data.  
 	User untuk apache adalah www-data, jadi untuk owner pada semua folder, sub folder dan file di `/var/www/html/` harus diganti ke www-data.
 	```
