@@ -193,19 +193,19 @@ sudo apt-get upgrade
 ----
 
 ### INSTALL APACHE DAN PHP SERVER SERTA INSTALASI WEB
-1. Instal apache dan PHP.
+- Instal apache dan PHP.
 	```  
 	sudo apt install apache2
 	sudo apt install php php-mbstring
 	```
 
-2. Ganti owner folder html.  
+- Ganti owner folder html.  
 	Default owner pada `/var/www/html` adalah root (user pi tidak punya akses pada folder tersebut)
 	```
 	sudo chown pi:pi /var/www/html
 	```
-3. Copy kan file aplikasi display masjid menggunakan WinSCP ke `/var/www/html`
-4. Ganti owner ke www-data.  
+- Copy kan file aplikasi display masjid menggunakan WinSCP ke `/var/www/html`
+- Ganti owner ke www-data.  
 	User untuk apache adalah www-data, jadi untuk owner pada semua folder, sub folder dan file di `/var/www/html/` harus diganti ke www-data.
 	```
 	sudo chown -R www-data:www-data /var/www/html/
@@ -215,7 +215,7 @@ sudo apt-get upgrade
 		sudo chown -R pi:pi /var/www/html/
 		```
 
-5. Enable rewrite untuk proteksi database.  
+- Enable rewrite untuk proteksi database.  
 	Penyimpanan data (database) pada aplikasi ini menggunakan file json pada folder db, defaultnya file ini bisa diakses dari halaman website, sehingga user dan password aplikasi bisa terbaca, maka perlu diproteksi agar tidak dapat diakses melalui website.
 	```
 	sudo nano /etc/apache2/sites-enabled/000-default.conf
@@ -226,7 +226,7 @@ sudo apt-get upgrade
 		AllowOverride All
 	</Directory>
 	```
-6. Restart apache server dengan perintah:
+- Restart apache server dengan perintah:
 	```
 	sudo systemctl restart apache2
 	```
@@ -234,8 +234,8 @@ sudo apt-get upgrade
 	```
 	sudo service apache2 restart
 	```
-7. Enable sound permission pada browser chrome.  
-Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.  
+- Enable sound permission pada browser chrome.  
+	Pada count down iqomah < 5 detik akan muncul beep, maka perlu di enable permission di chrome agar bisa bunyi.  
 	- Buka browser chrome (di raspberry)
 	- Alamat http://localhost/display/
 	- Pilih pada `view site information` --> ada di sebelah address (lihat video / googling aja kalo gak nemu)
