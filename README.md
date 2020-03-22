@@ -471,9 +471,8 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 	```
 	sudo service dhcpcd restart
 	```
-	 **PERINGATAN!  JANGAN JALANKAN RESTART DHCPD JIKA ANDA KONEKSI KE RASPBERRY VIA REMOTE**  
+	 **PERINGATAN!  JANGAN JALANKAN RESTART DHCPCD JIKA ANDA KONEKSI KE RASPBERRY VIA REMOTE**  
 	> jangan dijalankan jika via remote, karena akan mematikan koneksi wifi raspberry ke access point.  
-	> jika via remote jalankan paling akhir setelah setting IP dan DHCP SERVER, atau langsung restart raspberry.  
 
 - Configuring the DHCP server (dnsmasq).  
 	- Backup dulu config lama.
