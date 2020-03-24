@@ -1314,6 +1314,8 @@ isha		= 18°
 		$this->retSuccess();
 	}
 	private function sistem(){
+		$temp	= exec("/opt/vc/bin/vcgencmd measure_temp | egrep -o '[0-9]*\.[0-9]*'");
+		// $temp	= exec("/opt/vc/bin/vcgencmd measure_temp");
 		ob_start();
 		echo '
 			<section class="content-header content-dynamic">
@@ -1369,12 +1371,27 @@ isha		= 18°
 					</div>
 				</div>
 				<div class="box-body">
-					<button class="btn btn-app" onclick="app.shutdown(this,'r')"><i class="fa fa-repeat"></i> Restart</button>
-					<button class="btn btn-app" onclick="app.shutdown(this,'s')"><i class="fa fa-power-off"></i> Shutdown</button>
+					<div class="form-group">
+						<label>Temperature</label>
+						<div class="input-group">
+						  <div class="input-group-addon">
+							<i class="fa fa-thermometer"></i>
+						  </div>
+						  <input type="text" class="form-control pull-right" value="<?=$temp?> &#176;C" disabled>
+						</div>
+					</div>
+					<div class="input">
+						- Range temperature normal 0 - 70 &#176;C<br>
+						- Alarm overheat > 80 &#176;C 
+					</div>
+				</div>
+				<div class="box-footer">
+					<button  class="btn btn-app" onclick="$('.sidebar-menu .active a').trigger('click')"><i class="fa fa-thermometer"></i> Refresh </button>
+					<button class="btn btn-app pull-right" onclick="app.shutdown(this,'r')"><i class="fa fa-repeat"></i> Restart</button>
+					<button class="btn btn-app pull-right" onclick="app.shutdown(this,'s')"><i class="fa fa-power-off"></i> Shutdown</button>
 				</div>
 			</div>
-		</div>
-		<div class="col-md-6 col-sm-12 col-xs-12">
+		</div>		<div class="col-md-6 col-sm-12 col-xs-12">
 			<div class="box box-danger">
 				<div class="box-header with-border">
 					<h3 class="box-title">Reset pengaturan awal</h3>
