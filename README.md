@@ -49,9 +49,15 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 	- Device lainnya hanya sebagai client yang menampilkan halaman web dari server dengan konfigurasi update waktu (NTP client) ke device server agar waktu yang ditampilkan sama (tidak perlu menambahkan modul RTC pada raspberry client). 
 
 
+### Video
+
+Link video [instalasi](https://youtu.be/HfmVgQ77y5w)  
+
+Link video [demo admin](https://youtu.be/EFtnvGdlG1o)  
 
 
 ### Overview
+
 ![Image Display 1](readme-image/img1.jpg)
 
 
