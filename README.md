@@ -271,7 +271,7 @@ Tambahkan baris berikut
 
 # ada beberapa kasus di chrome yang suka muncul error gagal update 
 # seperti pada forum raspi : https://www.raspberrypi.org/forums/viewtopic.php?t=264399
-# solusi sementara pada saat start tambahkan update sape setahun
+# solusi sementara pada saat start tambahkan update sampe setahun
 
 chromium-browser --check-for-update-interval=31536000 --incognito --kiosk http://localhost/display/
 
