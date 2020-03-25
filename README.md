@@ -203,7 +203,7 @@ sudo apt-get upgrade
 - Ganti owner folder html.  
 	Default owner pada `/var/www/html` adalah root (user pi tidak punya akses pada folder tersebut)
 	```
-	sudo chown pi:pi /var/www/html
+	sudo chown -R pi:pi /var/www/html
 	```
 - Copy kan file aplikasi display masjid menggunakan WinSCP ke `/var/www/html`
 - Ganti owner ke www-data.  
