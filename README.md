@@ -76,6 +76,7 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 #### Material yang dibutuhkan:
 - Raspberry PI 3 model 3B, 3B+ atau Raspberry PI 4 Model B (pada saat tulisan ini dibuat, model terbaru adalah Raspberry PI 4 Model B).  
 	> Aplikasi telah di uji coba pada : 
+	> - Raspberry PI 3 model 3B `OK`.
 	> - Raspberry PI 3 model 3B+ `OK`.
 	> - Raspberry PI 4 Model B `OK`.
 	> - Raspberry PI Zero `Display Lag`.  
@@ -266,12 +267,24 @@ sudo nano /etc/xdg/lxsession/LXDE-pi/autostart
 
 Tambahkan baris berikut
 ```
-chromium-browser --incognito --kiosk http://localhost/display/
+# chromium-browser --incognito --kiosk http://localhost/display/
+
+# ada beberapa kasus di chrome yang suka muncul error gagal update 
+# seperti pada forum raspi : https://www.raspberrypi.org/forums/viewtopic.php?t=264399
+# solusi sementara pada saat start tambahkan update sape setahun
+
+chromium-browser --check-for-update-interval=31536000 --incognito --kiosk http://localhost/display/
+
 ```
+
+
+
 > Jika menggunakan OS rasbian versi lama, session berada pada `~/.config/lxsession/`, perintah pada terminal:  
 	```
 	sudo nano ~/.config/lxsession/LXDE-pi/autostart
 	```
+
+
 
 
 ----
