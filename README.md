@@ -53,7 +53,7 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 
 Link video [instalasi](https://youtu.be/HfmVgQ77y5w)  
 
-Link video [demo admin](https://youtu.be/EFtnvGdlG1o)  
+Link video [demo admin](https://youtu.be/94Yjqq0RiNY)  
 
 
 ### Overview
