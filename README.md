@@ -50,10 +50,14 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 
 
 ### Video
+#### 01. Demo dan manual
+[![Demo & Manual](http://img.youtube.com/vi/odmJeMKmeQw/0.jpg)](https://youtu.be/odmJeMKmeQw)
 
-Link video [instalasi](https://youtu.be/HfmVgQ77y5w)  
+#### 02. Demo Admin (video lama)
+[![Demo Admin](http://img.youtube.com/vi/94Yjqq0RiNY/0.jpg)](https://youtu.be/94Yjqq0RiNY)
 
-Link video [demo admin](https://youtu.be/94Yjqq0RiNY)  
+#### 03. Instalasi
+[![Instalasi](http://img.youtube.com/vi/HfmVgQ77y5w/0.jpg)](https://youtu.be/HfmVgQ77y5w)
 
 
 ### Overview
