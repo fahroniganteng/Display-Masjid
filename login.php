@@ -21,6 +21,7 @@ if (file_exists($file)){
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Display|Masjid|Admin</title>
 	<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+	<link rel="icon" type="image/png" href="icon.png"/>
 	<link rel="stylesheet" href="dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="dist/css/font-awesome.min.css">
 	<link rel="stylesheet" href="dist/css/AdminLTE.min.css">
