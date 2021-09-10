@@ -1,6 +1,5 @@
 # DISPLAY MASJID - VERSI 1.0.0
-> This manual in indonesia language, because application in indonesian version.  
-> English version is coming soon...
+
 
 Aplikasi display masjid digunakan sebagai media informasi pada masjid dan musholla.  
 
@@ -605,4 +604,14 @@ Menjadikan raspberry sebagai akses poin wifi untuk admin display masjid.
 			```
 			sudo nano /etc/hostapd/hostapd.conf
 			```
-	
+<hr>
+
+### LISENSI
+MIT license
+
+<hr>
+
+### DONASI  
+Dukung saya 
+- [Traktir kopi](https://sociabuzz.com/fahroniganteng/tribe)
+- [atau Es krim](https://trakteer.id/fahroniganteng/tip) 
