@@ -26,7 +26,7 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 		> Untuk indonesia menggunakan metode dari kemenag, pilih pada manual.  
 		> Cara pengisian ada pada menu admin.
 	- Terdapat fitur simulasi waktu sholat di menu admin.  
-		Akurasi perhitungan waktu sholat dari library [praytimes.org](http://praytimes.org/) cukup baik, sudah dicoba untuk dibandingkan dengan situs https://jadwalsholat.pkpu.or.id/ dalam kurun waktu 1 tahun (1 januari 2020 sampai 31 desember 2020) untuk wilayah bekasi, dengam koordinat dan metode yang sama, hasilnya selisih perhitungan maksimal hanya 1 menit. (file excel komparasi bisa di lihat [disini](readme-image/compare.xlsx))
+		Akurasi perhitungan waktu sholat dari library [praytimes.org](http://praytimes.org/) cukup baik, sudah dicoba untuk dibandingkan dengan situs https://jadwalsholat.pkpu.or.id/ dalam kurun waktu 1 tahun (1 januari 2020 sampai 31 desember 2020) untuk wilayah bekasi, dengam koordinat dan metode yang sama, hasilnya selisih perhitungan maksimal hanya 1 menit. (file excel komparasi bisa di lihat [disini](src/readme-image/compare.xlsx))
 	- Terdapat menu penyesuaian waktu sholat -60 sampai +60 menit.  
 		Contoh penggunaan : jadwal ditambahkan +2 menit untuk ihtiyati (pengaman), dll.
 - Display informasi masjid/musholla, bisa ditambah/diganti.
@@ -61,22 +61,22 @@ Aplikasi ini gratis dan open source dibawah lisensi **MIT**
 
 ### Overview
 
-![Image Display 1](readme-image/img1.jpg)
+![Image Display 1](src/readme-image/img1.jpg)
 
 
-![Image Display 2](readme-image/img2.jpg)
+![Image Display 2](src/readme-image/img2.jpg)
 
 
-![Image Display 3](readme-image/img3.jpg)
+![Image Display 3](src/readme-image/img3.jpg)
 
 
-![Image Display 4](readme-image/img4.jpg)
+![Image Display 4](src/readme-image/img4.jpg)
 
 ### Admin menu
-![Image Admin 1](readme-image/img5.JPG)
-![Image Admin 2](readme-image/img6.JPG)
-![Image Admin 3](readme-image/img7.JPG)
-![Image Admin 4](readme-image/img8.JPG)
+![Image Admin 1](src/readme-image/img5.JPG)
+![Image Admin 2](src/readme-image/img6.JPG)
+![Image Admin 3](src/readme-image/img7.JPG)
+![Image Admin 4](src/readme-image/img8.JPG)
 
 ----
 

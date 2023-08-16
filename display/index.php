@@ -27,7 +27,8 @@
 	$filesLogo	= array_diff(scandir($dirLogo),array('.','..','Thumbs.db'));
 	$filesLogo	= array_values($filesLogo);//re index
 	$logo		= $filesLogo[0];
-	
+
+    $host = "https://bphn-masjid-screen.test/display";
 	
 	$dir	= 'wallpaper/';
 	$files	= array_diff(scandir($dir),array('.','..','Thumbs.db'));
@@ -35,13 +36,10 @@
 	$i	= 0;
 	foreach($files as $v){
 		$active	= $i==0?'active':'';
-		$wallpaper	.= '<div class="item slides '.$active.'"><div style="background-image: url(wallpaper/'.$v.');"></div></div>';
+		$wallpaper	.= '<div class="item slides '.$active.'"><div style="background-image: url('.$host.'/wallpaper/'.$v.');"></div></div>';
 		$i++;
 	}
-	// print_r($files);die;
 ?>
-
-
 <!doctype html>
 <html>
 <head>
@@ -51,9 +49,9 @@
     <title>Display|Masjid</title>
     <link rel="icon" type="image/png" href="../icon.png"/>
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo $host ?>/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo $host ?>/css/font-awesome.min.css" rel="stylesheet">
+    <link href="<?php echo $host ?>/css/style.css" rel="stylesheet">
 	<style>
 		
 	</style>
@@ -159,51 +157,12 @@
 			</div>
 		</div>
 	</div>
-    <script src="js/jquery-3.4.1.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/moment-with-locales.js"></script>
-    <script src="js/PrayTimes.js"></script>
-    <script src="js/jquery.marquee.js"></script>
+    <script src="<?php echo $host ?>/js/jquery-3.4.1.min.js"></script>
+    <script src="<?php echo $host ?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo $host ?>/js/moment-with-locales.js"></script>
+    <script src="<?php echo $host ?>/js/PrayTimes.js"></script>
+    <script src="<?php echo $host ?>/js/jquery.marquee.js"></script>
     <script>
-		<?php //Biar nggak ke load di HTML
-		// loader 
-		// $(window).on('load', function(){ // makes sure the whole site is loaded
-			//$('#status').fadeOut(); // will first fade out the loading animation
-			// $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-			//$('body').delay(350).css({'overflow':'visible'});
-		// })
-
-		// moment.locale('id');
-		/*
-		Input		Example			Description
-		YYYY		2014			4 or 2 digit year
-		YY			14				2 digit year
-		Y			-25				Year with any number of digits and sign
-		Q			1..4			Quarter of year. Sets month to first month in quarter.
-		M MM		1..12			Month number
-		MMM MMMM	Jan..December	Month name in locale set by moment.locale()
-		D DD		1..31			Day of month
-		Do			1st..31st		Day of month with ordinal
-		DDD DDDD	1..365			Day of year
-		X			1410715640.579	Unix timestamp
-		x			1410715640579	Unix ms timestamp
-		ddd dddd	Mon...Sunday	Day name in locale set by moment.locale()
-
-		H HH		0..23			Hours (24 hour time)
-		h hh		1..12			Hours (12 hour time used with a A.)
-		k kk		1..24			Hours (24 hour time from 1 to 24)
-		a A			am pm			Post or ante meridiem (Note the one character a p are also considered valid)
-		m mm		0..59			Minutes
-		s ss		0..59			Seconds
-		S SS SSS	0..999			Fractional seconds
-		Z ZZ		+12:00			Offset from UTC as +-HH:mm, +-HHmm, or Z
-
-
-		*/
-		?>
-		
-		
-		
 		//PrayTimes initialize
 		var format 			= '24h';
 		<?php
@@ -218,7 +177,7 @@
 				foreach($db['prayTimesAdjust'] as $k => $v){
 					if($v!='') $prayTimesAdjust[$k]=$v;
 				}
-				echo "var prayTimesAdjust =	$.parseJSON('".stripslashes(str_replace("`","\\`",json_encode($prayTimesAdjust)))."');\n";
+				echo "var prayTimesAdjust =	JSON.parse('".stripslashes(str_replace("`","\\`",json_encode($prayTimesAdjust)))."');\n";
 				// echo "console.log(prayTimesAdjust);\n";
 				echo "prayTimes.adjust(prayTimesAdjust);\n"; 
 			}
